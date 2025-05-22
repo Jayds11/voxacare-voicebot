@@ -1,4 +1,3 @@
-
 from flask import Flask, request, Response
 from twilio.twiml.voice_response import VoiceResponse, Gather
 import requests
@@ -28,7 +27,6 @@ def process():
         vr.dial(os.environ.get("FORWARDING_NUMBER", "+18588883373"))
         return Response(str(vr), mimetype='text/xml')
     else:
-        # Example fallback logic (would be replaced by GPT-4 API)
         response_text = f"You said: {speech_result}. I’ll pass this along or you can book now."
 
     resp = VoiceResponse()
